@@ -1,9 +1,17 @@
-//Here we're importing items we'll need. You can add other imports here.
+const jquery = require("jquery");
+window.$ = window.jQuery = jquery; // notice the definition of global variables here
+require("jquery-ui-dist/jquery-ui.js");
+import "pivottable";
+// import "pivottable/dist/c3_renderers.js";
+// import "pivottable/dist/export_renderers";
+import { data } from "./data";
 
-//The first function. Remove this.
-const btn = document.querySelector("button");
-btn.onclick = function () {
-  alert("You ran some JavaScript");
-};
+console.log(data);
 
-//
+$("#output").pivotUI(data, {
+  rows: ["City", "State"],
+  cols: ["Branches"],
+  vals: ["Amt All Del Loans"],
+  aggregatorName: "Sum",
+  rendererName: "Table",
+});

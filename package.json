@@ -16,5 +16,10 @@
   "devDependencies": {
     "open": "^8.2.1",
     "parcel": "^2.2.0"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery-ui-dist": "^1.13.1",
+    "pivottable": "^2.23.0"
   }
 }
